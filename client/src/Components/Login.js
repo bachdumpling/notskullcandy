@@ -54,14 +54,12 @@ function Login() {
 
     return (
         <div>
-            <Navbar />
             <div className='bg-white pt-12 pb-20'>
                 <div className='grid grid-cols-2 grid-rows-1'>
                     {renderFormSignIn}
                     {renderFormSignUp}
                 </div>
             </div>
-            <Footer />
         </div>
     )
 }

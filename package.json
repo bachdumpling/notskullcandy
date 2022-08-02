@@ -9,5 +9,9 @@
     "clean": "rm -rf public",
     "deploy": "cp -a client/build/. public/",
     "heroku-postbuild": "npm run clean && npm run build && npm run deploy"
+  },
+  "dependencies": {
+    "react-star-rate": "^0.2.0",
+    "react-star-ratings": "^2.3.0"
   }
 }

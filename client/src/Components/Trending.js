@@ -9,15 +9,15 @@ import workshop from '../Assets/workshop.png'
 function Trending() {
   return (
     <div>
-      <div className='bg-[#D0BDAF] flex-row grid grid-cols-3'>
-        <div>
-          <img src={trendingpic1} />
+      <div className=' flex-row grid grid-cols-3'>
+        <div >
+          <img className='w-full h-full' src={trendingpic1} />
         </div>
         <div>
-          <img src={trendingpic2} />
+          <img className='w-full h-full' src={trendingpic2} />
         </div>
         <div>
-          <img src={trendingpic3} />
+          <img className='w-full h-full' src={trendingpic3} />
         </div>
       </div>
 

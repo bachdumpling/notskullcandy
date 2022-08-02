@@ -28,15 +28,15 @@ User.create(name: "Alan", password_digest:"", img_url:"https://encrypted-tbn0.gs
 
 puts "seeding reviews"
 
-Review.create(comment: "This is the best earbud I ever had, ...and the only one tho", rating: rand(1..5) ,user_id: User.all.sample.id, product_id: Product.all.sample.id)
-Review.create(comment: "meh...", rating: rand(1..5) ,user_id: User.all.sample.id, product_id: Product.all.sample.id)
-Review.create(comment: "WOW, it's better than Apple's", rating: rand(1..5) ,user_id: User.all.sample.id, product_id: Product.all.sample.id)
-Review.create(comment: "I dont know... I was expecting it to be louder", rating: rand(1..5) ,user_id: User.all.sample.id, product_id: Product.all.sample.id)
-Review.create(comment: "I lost them, but for the 10 minutes I had it, It was OK", rating: rand(1..5) ,user_id: User.all.sample.id, product_id: Product.all.sample.id)
-Review.create(comment: "My dog seem to like them, Its the second time they eat it.", rating: rand(1..5) ,user_id: User.all.sample.id, product_id: Product.all.sample.id)
-Review.create(comment: "If you are trying to waste your money, buy it, otherwise buy anything else.", rating: rand(1..5) ,user_id: User.all.sample.id, product_id: Product.all.sample.id)
-Review.create(comment: "It's great", rating: rand(1..5) ,user_id: User.all.sample.id, product_id: Product.all.sample.id)
-Review.create(comment: "The battery last 2 days, awesome!", rating: rand(1..5) ,user_id: User.all.sample.id, product_id: Product.all.sample.id)
+# Review.create(comment: "This is the best earbud I ever had, ...and the only one tho", rating: rand(1..5) ,user_id: User.all.sample.id, product_id: Product.all.sample.id)
+# Review.create(comment: "meh...", rating: rand(1..5) ,user_id: User.all.sample.id, product_id: Product.all.sample.id)
+# Review.create(comment: "WOW, it's better than Apple's", rating: rand(1..5) ,user_id: User.all.sample.id, product_id: Product.all.sample.id)
+# Review.create(comment: "I dont know... I was expecting it to be louder", rating: rand(1..5) ,user_id: User.all.sample.id, product_id: Product.all.sample.id)
+# Review.create(comment: "I lost them, but for the 10 minutes I had it, It was OK", rating: rand(1..5) ,user_id: User.all.sample.id, product_id: Product.all.sample.id)
+# Review.create(comment: "My dog seem to like them, Its the second time they eat it.", rating: rand(1..5) ,user_id: User.all.sample.id, product_id: Product.all.sample.id)
+# Review.create(comment: "If you are trying to waste your money, buy it, otherwise buy anything else.", rating: rand(1..5) ,user_id: User.all.sample.id, product_id: Product.all.sample.id)
+# Review.create(comment: "It's great", rating: rand(1..5) ,user_id: User.all.sample.id, product_id: Product.all.sample.id)
+# Review.create(comment: "The battery last 2 days, awesome!", rating: rand(1..5) ,user_id: User.all.sample.id, product_id: Product.all.sample.id)
 
 
 

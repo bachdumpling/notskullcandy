@@ -1,29 +1,32 @@
-import React, { useState } from 'react'
-import Navbar from './Navbar'
-import Footer from './Footer'
+import React, { useEffect, useState } from 'react'
 import ProductCard from './ProductCard'
+import ProductPage from './ProductPage'
 
 function Shop() {
     const [data, setData] = useState([])
 
-    function getData(){
+    useEffect(() => {
+        getData()
+    }, [])
+
+    function getData() {
         fetch('/products')
             .then(res => res.json())
-            .then(setData)
+            .then(res => setData(res))
     }
 
-    const productCard = data.map((item) =>{
-        return <ProductCard product={item} key={item.id}/>
+    const productCard = data.map((item) => {
+        return <ProductCard product={item} key={item.id} />
     })
 
     return (
         <div>
-            <Navbar />
-            <div className='bg-white pt-12 pb-20'>
-                <h1 className='text-black font-extrabold text-5xl pb-12 text-center'>SHOP</h1>
-                {productCard}
+            <div className='bg-white pt-28 pb-20'>
+                <h1 className='text-black font-extrabold text-6xl pb-12 text-center'>SHOP</h1>
+                <div className='grid grid-flow-row grid-cols-3'>
+                    {productCard}
+                </div>
             </div>
-            <Footer />
         </div>
     )
 }
