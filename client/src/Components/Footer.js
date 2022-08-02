@@ -77,7 +77,7 @@ function Footer() {
                     <p>© 2022 Skullcandy.com All Rights Reserved</p>
                 </div>
 
-                <div className='mx-auto text-sm object-center z-10'>
+                <div className='mx-auto text-sm object-center'>
                     <img className=' h-6 pl-10 ml-5' src="https://cdn11.bigcommerce.com/s-k11cg5mzh9/stencil/cd0dff20-dac1-013a-d683-5a8d00511882/e/2dcfde50-f407-0135-4ccd-525400970412/img/creditcardlogos1.jpeg" />
                 </div>
             </div>
