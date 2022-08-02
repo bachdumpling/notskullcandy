@@ -1,11 +1,18 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import Navbar from "./Components/Navbar";
+import Hero from "./Components/Hero";
+import Trending from "./Components/Trending";
+import Footer from "./Components/Footer";
+import Login from "./Components/Login";
 
 function App() {
   return (
-    <div className="App">
-        <img src={logo} className="App-logo" alt="logo" />
-       <h1>hello World</h1>
+    <div className="App bg-black">
+      <Navbar />
+      <Hero />
+      <Trending />
+      <Footer />
+      <Login />
     </div>
   );
 }

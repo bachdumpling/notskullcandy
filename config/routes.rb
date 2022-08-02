@@ -1,14 +1,11 @@
 Rails.application.routes.draw do
   
+  resources :reviews
+  resources :products
   get '/users', to: 'users#index'
   # Routing logic: fallback requests for React Router.
   # Leave this here to help deploy your app later!
   get "*path", to: "fallback#index", constraints: ->(req) { !req.xhr? && req.format.html? }
-
-  get 'sessions/show'
-  get 'sessions/destroy'
-  resources :recipes
-  resources :users
 
   post '/signup', to: 'users#create'
   get '/me', to: 'users#show'
