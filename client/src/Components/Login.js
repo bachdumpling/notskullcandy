@@ -1,10 +1,22 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import Navbar from './Navbar'
 import Footer from './Footer'
-import { useState } from "react";
-import { useHistory } from "react-router-dom";
+//import { useHistory } from "react-router-dom";
 
 function Login() {
+
+    const [data, setData] = useState([])
+
+    useEffect(()=> {fetchData()},[])
+
+    function fetchData () {
+        fetch('/products')
+        .then(res => res.json())
+        .then(res => { setData(res)})
+    }
+    
+    console.log(data)
+
 
     const renderFormSignIn = (
         <div className='ml-28 pl-44 flex-shrink-0'>

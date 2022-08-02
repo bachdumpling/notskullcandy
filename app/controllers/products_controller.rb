@@ -1,5 +1,5 @@
 class ProductsController < ApplicationController
-  #before_action :set_product, only: [:show, :update, :destroy]
+  before_action :set_product, only: [:show, :update, :destroy]
 
   # GET /products
   def index
@@ -9,7 +9,7 @@ class ProductsController < ApplicationController
 
   # GET /products/1
   def show
-    render json: @product
+    render json: @product, serializer: ProductReviewSerializer
   end
 
   # POST /products
