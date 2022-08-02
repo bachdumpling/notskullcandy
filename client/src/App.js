@@ -4,6 +4,7 @@ import Hero from "./Components/Hero";
 import Trending from "./Components/Trending";
 import Footer from "./Components/Footer";
 import Login from "./Components/Login";
+import Shop from "./Components/Shop";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       <Trending />
       <Footer />
       <Login />
+      <Shop />
     </div>
   );
 }
