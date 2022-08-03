@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useState} from "react";
 import Navbar from "./Components/Navbar";
 import Hero from "./Components/Hero";
 import Trending from "./Components/Trending";
@@ -6,9 +6,18 @@ import Footer from "./Components/Footer";
 import Login from "./Components/Login";
 import Shop from "./Components/Shop";
 import { Switch, Link, BrowserRouter as Router, Route } from "react-router-dom";
-import ProductPage from "./Components/ProductPage";
+import ProductPageCard from './Components/ProductPageCard.js'
 
 function App() {
+  const [oneProductData, setOneProductData] = useState({})
+  // let oneProductData
+  // let setOneProductData
+  console.log(oneProductData)
+
+  function getOneProduct(product) {
+    setOneProductData(product)
+  }
+
   return (
     <Router>
       <Navbar />
@@ -26,15 +35,14 @@ function App() {
           </Route>
 
           <Route path="/shop">
-            <Shop />
+            <Shop getOneProduct={getOneProduct} />
           </Route>
 
-          {/* <Route path="/product">
-            <ProductPage />
-          </Route> */}
+          <Route path="/products/:id">
+            <ProductPageCard productData={oneProductData}/>
+          </Route>
         </Switch>
         <Footer />
-        <ProductPage/>
       </div>
     </Router>
   );

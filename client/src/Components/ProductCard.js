@@ -1,12 +1,18 @@
 import React from 'react'
+import { useHistory } from 'react-router-dom'
+import ProductPageCard from './ProductPageCard'
 
-function ProductCard({ product }) {
-    function handleClick(e){
-        console.log(e.target)
+function ProductCard({ product, getOneProduct, productId }) {
+    let history = useHistory()
+
+    function productClick(e) {
+        console.log(e)
+        getOneProduct(e)
+        history.push(`/products/${productId}`)
     }
 
     return (
-        <div onClick={(e) => handleClick(e)} className='pb-20 cursor-pointer'>
+        <div onClick={(e) => productClick(product)} className='pb-20 cursor-pointer'>
             <div className='flex items-center justify-center transform transition duration-500 hover:scale-110 pb-10'>
                 <img className='h-8/12 w-8/12' src={product.product_img} />
             </div>

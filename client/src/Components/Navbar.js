@@ -16,6 +16,10 @@ function Navbar() {
         history.push('/home')
     }
 
+    function loginClick(){
+        history.push('/login')
+    }
+
     return (
         <div className='w-screen h-[60px] z-10 fixed bg-black drop-shadow-lg'>
             <div className='px-2 flex justify-between items-center w-full h-full'>
@@ -33,7 +37,7 @@ function Navbar() {
                 <div className='pr-14 flex items-center cursor-pointer'>
                     <h5 className='text-white text-xs mr-8 font-extralight pl-6'> Support </h5>
                     <img className='w-6 h-6 mr-8 rounded-xl' src={americanflag} />
-                    <UserIcon className=' w-8 h-6 mr-8 font-light text-white' />
+                    <UserIcon onClick={loginClick} className=' w-8 h-6 mr-8 font-light text-white' />
                     <SearchIcon className=' w-8 h-6 mr-8 font-light text-white' />
                     <ShoppingBagIcon className=' w-8 h-6 text-white' />
 

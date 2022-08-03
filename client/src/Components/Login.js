@@ -1,7 +1,4 @@
 import React, { useEffect, useState } from 'react'
-import Navbar from './Navbar'
-import Footer from './Footer'
-//import { useHistory } from "react-router-dom";
 
 function Login() {
 
@@ -15,11 +12,11 @@ function Login() {
         .then(res => { setData(res)})
     }
     
-    console.log(data)
+    console.log(data) 
 
 
     const renderFormSignIn = (
-        <div className='ml-28 pl-44 flex-shrink-0'>
+        <div className='h-6/12 pt-20 ml-28 pl-44 flex-shrink-0'>
             <h1 className='text-black font-extrabold text-5xl pb-12'> SIGN IN </h1>
             <form className=''>
                 <div className='text-left flex flex-col'>
@@ -42,7 +39,7 @@ function Login() {
     )
 
     const renderFormSignUp = (
-        <div className='ml-20 pl-44 flex-shrink-0'>
+        <div className='pt-20 ml-20 pl-44 flex-shrink-0'>
             <h1 className='text-black font-extrabold text-5xl pb-12'> SIGN UP </h1>
             <form className=''>
                 <div className='text-left flex flex-col'>
@@ -66,7 +63,7 @@ function Login() {
 
     return (
         <div>
-            <div className='bg-white pt-12 pb-20'>
+            <div className='bg-white pt-20 pb-28'>
                 <div className='grid grid-cols-2 grid-rows-1'>
                     {renderFormSignIn}
                     {renderFormSignUp}

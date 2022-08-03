@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import ProductCard from './ProductCard'
-import ProductPage from './ProductPage'
+import ProductPageCard from './ProductPageCard'
 
-function Shop() {
+function Shop({getOneProduct}) {
     const [data, setData] = useState([])
 
     useEffect(() => {
@@ -16,8 +16,11 @@ function Shop() {
     }
 
     const productCard = data.map((item) => {
-        return <ProductCard product={item} key={item.id} />
+        return <ProductCard product={item} productId = {item.id} key={item.id}  getOneProduct = {getOneProduct}/>
     })
+
+    // const productPageCard = <ProductPageCard productData={oneProductData} key={oneProductData.id}/>
+
 
     return (
         <div>
