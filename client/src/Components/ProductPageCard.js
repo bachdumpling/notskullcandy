@@ -1,4 +1,4 @@
-// import StarsRating from 'react-star-rate';
+import StarsRating from 'react-star-rate';
 
 function ProductPageCard({ product }) {
     console.log(product)
@@ -17,7 +17,7 @@ function ProductPageCard({ product }) {
                         </div>
                     </div>
                     <div className='bg-transparent pt-5 pb-10 w-[-16] text-white text-xs'>
-                            {/* <StarsRating defaultValue={product.rating} />  */}
+                            <StarsRating defaultValue={product.rating} /> 
                             213 Reviews
                     </div>
                     <div>
