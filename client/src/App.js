@@ -1,4 +1,4 @@
-import React,{useState} from "react";
+import React , {useState, useEffect} from "react";
 import Navbar from "./Components/Navbar";
 import Hero from "./Components/Hero";
 import Trending from "./Components/Trending";
@@ -10,13 +10,26 @@ import ProductPageCard from './Components/ProductPageCard.js'
 
 function App() {
   const [oneProductData, setOneProductData] = useState({})
-  // let oneProductData
-  // let setOneProductData
-  console.log(oneProductData)
+  const [user, setUser] = useState(null);
+
 
   function getOneProduct(product) {
     setOneProductData(product)
   }
+
+  useEffect(() => {
+    // auto-login
+    fetch("/me").then((r) => {
+      if (r.ok) {
+        r.json().then((user) => setUser(user));
+      }
+    });
+  }, []);
+ 
+  //uncomment when finished testing.. add element inside
+  // navbar to display the user logged in
+  
+  // if (!user) return <Login onLogin={setUser} />;
 
   return (
     <Router>
