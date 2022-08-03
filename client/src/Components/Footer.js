@@ -4,7 +4,7 @@ import { ChevronRightIcon } from '@heroicons/react/outline'
 
 function Footer() {
     return (
-        <div className=' w-full pt-12 border-b-2 border-white'>
+        <div className=' z-20 w-full pt-12 border-b-2 border-white'>
 
             <div className='grid grid-cols-5 grid-rows-1 mb-20 pb-7'>
 

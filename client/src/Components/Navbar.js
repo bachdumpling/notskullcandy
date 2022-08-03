@@ -20,6 +20,10 @@ function Navbar() {
         history.push('/login')
     }
 
+    function cartClick(){
+        history.push('/cart')
+    }
+
     return (
         <div className='w-screen h-[60px] z-10 fixed bg-black drop-shadow-lg'>
             <div className='px-2 flex justify-between items-center w-full h-full'>
@@ -39,7 +43,7 @@ function Navbar() {
                     <img className='w-6 h-6 mr-8 rounded-xl' src={americanflag} />
                     <UserIcon onClick={loginClick} className=' w-8 h-6 mr-8 font-light text-white' />
                     <SearchIcon className=' w-8 h-6 mr-8 font-light text-white' />
-                    <ShoppingBagIcon className=' w-8 h-6 text-white' />
+                    <ShoppingBagIcon onClick={cartClick} className=' w-8 h-6 text-white' />
 
                 </div>
             </div>
