@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react'
 import ProductCard from './ProductCard'
-import ProductPageCard from './ProductPageCard'
 
 function Shop({getOneProduct}) {
     const [data, setData] = useState([])

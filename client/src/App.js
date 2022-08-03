@@ -1,4 +1,4 @@
-import React,{useState} from "react";
+import React, { useState } from "react";
 import Navbar from "./Components/Navbar";
 import Hero from "./Components/Hero";
 import Trending from "./Components/Trending";
@@ -7,11 +7,10 @@ import Login from "./Components/Login";
 import Shop from "./Components/Shop";
 import { Switch, Link, BrowserRouter as Router, Route } from "react-router-dom";
 import ProductPageCard from './Components/ProductPageCard.js'
+import Cart from "./Components/Cart";
 
 function App() {
   const [oneProductData, setOneProductData] = useState({})
-  // let oneProductData
-  // let setOneProductData
   console.log(oneProductData)
 
   function getOneProduct(product) {
@@ -39,7 +38,11 @@ function App() {
           </Route>
 
           <Route path="/products/:id">
-            <ProductPageCard productData={oneProductData}/>
+            <ProductPageCard productData={oneProductData} />
+          </Route>
+
+          <Route path={"/cart"}>
+            <Cart />
           </Route>
         </Switch>
         <Footer />
