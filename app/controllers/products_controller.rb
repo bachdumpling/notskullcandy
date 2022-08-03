@@ -9,7 +9,7 @@ class ProductsController < ApplicationController
 
   # GET /products/1
   def show
-    render json: @product, serializer: ProductReviewSerializer
+    render json: @product 
   end
 
   # POST /products
