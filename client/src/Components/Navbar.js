@@ -24,6 +24,10 @@ function Navbar({user}) {
         history.push('/cart')
     }
 
+    function cartClick(){
+        history.push('/cart')
+    }
+
     return (
         <div className='w-screen h-[60px] z-10 fixed bg-black drop-shadow-lg'>
             <div className='px-2 flex justify-between items-center w-full h-full'>
