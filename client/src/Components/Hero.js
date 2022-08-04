@@ -32,14 +32,14 @@ function Hero() {
                 <div className="w-full h-full">
                         <img className=" mx-auto object-center w-full h-full" src={pic2}></img>
                         <div className="absolute flex flex-col w-2/12 text-center">
-                            <div className="text-white">
+                            {/* <div className="text-white">
                                 <div className="leading-none">
                                     <h1 className="text-md font-bold uppercase flex flex-col pb-2">SMART FEATURES, WIRELESS CHARGING.</h1>
                                 </div>
                                 <div className="">
                                     <h2 className="text-xs capitalize flex flex-col pb-2">Shop Grind Fuel</h2>
                                 </div>
-                            </div>
+                            </div> */}
                     </div>
 
                 </div>

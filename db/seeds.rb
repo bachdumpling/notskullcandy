@@ -1,4 +1,6 @@
-
+# Product.destroy_all
+Review.destroy_all
+User.destroy_all
 
 puts "seeding products, hold on"
 

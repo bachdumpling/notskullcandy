@@ -1,8 +1,9 @@
 Rails.application.routes.draw do
   
-  # resources :reviews
+  resources :reviews, only: [:create, :update]
   # resources :products
   # resources :users
+  resources :reviews
 
   get '/users', to: 'users#index'
 
@@ -15,5 +16,7 @@ Rails.application.routes.draw do
   get '/products', to: 'products#index'
 
   get '/products/:id', to: 'products#show'
+
+  delete '/reviewdelete', to: 'reviews#destroy'
 
 end

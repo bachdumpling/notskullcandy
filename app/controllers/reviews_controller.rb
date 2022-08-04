@@ -1,5 +1,6 @@
 class ReviewsController < ApplicationController
-  #before_action :set_review, only: [:show, :update, :destroy]
+  before_action :set_review, only: [:show, :update, :destroy]
+  skip_before_action :authorize, only: [:index, :show]
 
   # GET /reviews
   def index

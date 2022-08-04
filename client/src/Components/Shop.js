@@ -11,7 +11,12 @@ function Shop({getOneProduct}) {
     function getData() {
         fetch('/products')
             .then(res => res.json())
-            .then(res => setData(res))
+            .then(res => {
+                console.log(res)
+                if(res.length > 0){
+                    setData(res)
+                }
+            })
     }
 
     const productCard = data.map((item) => {

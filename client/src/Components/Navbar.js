@@ -5,7 +5,7 @@ import skullcandylogo from '../Assets/skullcandylogo.png'
 import americanflag from '../Assets/americanflag.png'
 import { useHistory } from 'react-router-dom'
 
-function Navbar() {
+function Navbar({user}) {
     let history = useHistory()
 
     function shopClick() {
@@ -17,7 +17,7 @@ function Navbar() {
     }
 
     function loginClick(){
-        history.push('/login')
+        user ? history.push('/user') : history.push('/login')
     }
 
     function cartClick(){
@@ -39,11 +39,11 @@ function Navbar() {
                 </div>
 
                 <div className='pr-14 flex items-center cursor-pointer'>
-                    <h5 className='text-white text-xs mr-8 font-extralight pl-6'> Support </h5>
+                    <h5 className='text-white capitalize text-xs mr-8 font-extralight pl-6'>{user ? `Welcome, ${user.username}.` : ''} </h5>
                     <img className='w-6 h-6 mr-8 rounded-xl' src={americanflag} />
                     <UserIcon onClick={loginClick} className=' w-8 h-6 mr-8 font-light text-white' />
                     <SearchIcon className=' w-8 h-6 mr-8 font-light text-white' />
-                    <ShoppingBagIcon onClick={cartClick} className=' w-8 h-6 text-white' />
+                    {user ? <ShoppingBagIcon onClick={cartClick} className=' w-8 h-6 text-white' /> : null}
 
                 </div>
             </div>

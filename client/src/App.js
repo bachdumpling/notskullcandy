@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-import React , {useState, useEffect} from "react";
-=======
-import React, { useState } from "react";
->>>>>>> afd06dc (cart)
+import React, { useState, useEffect } from "react";
 import Navbar from "./Components/Navbar";
 import Hero from "./Components/Hero";
 import Trending from "./Components/Trending";
@@ -12,15 +8,11 @@ import Shop from "./Components/Shop";
 import { Switch, Link, BrowserRouter as Router, Route } from "react-router-dom";
 import ProductPageCard from './Components/ProductPageCard.js'
 import Cart from "./Components/Cart";
+import WelcomePage from "./Components/WelcomePage";
 
 function App() {
   const [oneProductData, setOneProductData] = useState({})
-<<<<<<< HEAD
   const [user, setUser] = useState(null);
-
-=======
-  console.log(oneProductData)
->>>>>>> afd06dc (cart)
 
   function getOneProduct(product) {
     setOneProductData(product)
@@ -28,21 +20,22 @@ function App() {
 
   useEffect(() => {
     // auto-login
-    fetch("/me").then((r) => {
+    fetch("/me")
+    .then((r) => { 
       if (r.ok) {
         r.json().then((user) => setUser(user));
       }
-    });
+    })
   }, []);
- 
+
   //uncomment when finished testing.. add element inside
   // navbar to display the user logged in
-  
+
   // if (!user) return <Login onLogin={setUser} />;
 
   return (
     <Router>
-      <Navbar />
+      <Navbar user={user} />
       <div className="App bg-black">
         <Switch>
           <Route path="/home">
@@ -53,7 +46,7 @@ function App() {
 
         <Switch>
           <Route path="/login">
-            <Login />
+            <Login setUser={setUser}/>
           </Route>
 
           <Route path="/shop">
@@ -61,11 +54,15 @@ function App() {
           </Route>
 
           <Route path="/products/:id">
-            <ProductPageCard productData={oneProductData} />
+            <ProductPageCard user={user} productData={oneProductData} />
           </Route>
 
           <Route path={"/cart"}>
             <Cart />
+          </Route>
+
+          <Route path={"/user"}>
+            <WelcomePage user={user} />
           </Route>
         </Switch>
         <Footer />
