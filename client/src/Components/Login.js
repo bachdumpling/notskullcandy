@@ -67,7 +67,6 @@ function Login({ setUser }) {
         r.json().then((err) => setErrors(err.errors));
       }
     });
-    // userClick()
   }
 
   function userClick() {
@@ -76,7 +75,7 @@ function Login({ setUser }) {
 
   const renderFormSignIn = (
     <div className='h-6/12 w-2/6 pt-20 shrink-0' style={{ visibility: isVisible ? 'visible' : 'hidden' }}>
-      <h1 className='text-black font-extrabold text-5xl pb-12'> SIGN IN </h1>
+      <h1 className='text-black font-extrabold text-5xl pb-12'> LOG IN </h1>
       <form onSubmit={signin} className=''>
         <div className='text-left flex flex-col'>
           <label className='text-sm pb-3'>Username:</label>
@@ -90,7 +89,7 @@ function Login({ setUser }) {
         <div className='grid justify-items-center'>
           <div className=' w-full mb-3 h-12 bg-[#383838] text-center pt-3'>
             <button onClick className='text-white font-bold text-xs'>
-              SIGN IN
+              LOG IN
             </button>
           </div>
         </div>
@@ -119,22 +118,22 @@ function Login({ setUser }) {
           <label className='text-sm pt-5 pb-3'>Password:</label>
           <input className='bg-[#F6F6F6] border-2 w-full h-12' type='password' onChange={(e) => setPassword(e.target.value)} name='password' required />
         </div>
-        
+
         <div className='grid justify-items-center'>
-        <div className='  w-full mb-3 h-12 bg-[#383838] text-center pt-3'>
-          <button className='text-white font-bold text-xs'>
-            SIGN UP
-          </button>
-        </div>
-      </div>
-      </form>
-        <div className='grid justify-items-center'>
-          <div className=' w-full h-12 bg-[#dedede] text-center pt-3'>
-            <button onClick={handleClickVisible} className='text-black font-bold text-xs'>
-              SIGN IN
+          <div className='  w-full mb-3 h-12 bg-[#383838] text-center pt-3'>
+            <button className='text-white font-bold text-xs'>
+              SIGN UP
             </button>
           </div>
         </div>
+      </form>
+      <div className='grid justify-items-center'>
+        <div className=' w-full h-12 bg-[#dedede] text-center pt-3'>
+          <button onClick={handleClickVisible} className='text-black font-bold text-xs'>
+            LOG IN
+          </button>
+        </div>
+      </div>
     </div>
   )
 

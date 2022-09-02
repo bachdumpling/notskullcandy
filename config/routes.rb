@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   
-  resources :reviews, only: [:create, :update]
+  resources :reviews, only: [:index, :show, :create, :update, :update, :destroy]
   # resources :products
   # resources :users
   resources :reviews
