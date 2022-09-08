@@ -19,7 +19,7 @@ function WelcomePage({ user }) {
     return (
         <div>
             <div className='bg-white pt-48 pb-44 grid justify-items-center'>
-                <h1 className='text-black font-extrabold text-6xl pb-12 text-center uppercase'>
+                <h1 className='text-black font-extrabold text-6xl pb-12 text-center uppercase flex items-center'>
                     {user ? `Welcome, ${user.username}!` : ''}
                 </h1>
                 <div className=' w-2/12 h-12 bg-[#383838] text-center pt-3'>

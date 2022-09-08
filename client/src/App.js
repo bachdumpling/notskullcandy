@@ -11,7 +11,15 @@ import Cart from "./Components/Cart";
 import WelcomePage from "./Components/WelcomePage";
 
 function App() {
-  const [oneProductData, setOneProductData] = useState({})
+  const [oneProductData, setOneProductData] = useState({
+    "name": "",
+    "price": "",
+    "img_url": "",
+    "product_img": "",
+    "description": "",
+    "avg_rating": "",
+    "reviews": []
+  })
   const [user, setUser] = useState(null);
 
   function getOneProduct(product) {
@@ -21,11 +29,11 @@ function App() {
   useEffect(() => {
     // auto-login
     fetch("/me")
-    .then((r) => { 
-      if (r.ok) {
-        r.json().then((user) => setUser(user));
-      }
-    })
+      .then((r) => {
+        if (r.ok) {
+          r.json().then((user) => setUser(user));
+        }
+      })
   }, []);
 
   //uncomment when finished testing.. add element inside
@@ -46,7 +54,7 @@ function App() {
 
         <Switch>
           <Route path="/login">
-            <Login setUser={setUser}/>
+            <Login setUser={setUser} />
           </Route>
 
           <Route path="/shop">
@@ -54,7 +62,7 @@ function App() {
           </Route>
 
           <Route path="/products/:id">
-            <ProductPageCard user={user} productData={oneProductData} />
+            <ProductPageCard user={user}/>
           </Route>
 
           <Route path={"/cart"}>

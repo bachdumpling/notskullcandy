@@ -3,6 +3,7 @@ import { useHistory } from 'react-router-dom'
 import ProductPageCard from './ProductPageCard'
 
 function ProductCard({ product, getOneProduct, productId }) {
+    console.log(product)
     let history = useHistory()
 
     function productClick(e) {

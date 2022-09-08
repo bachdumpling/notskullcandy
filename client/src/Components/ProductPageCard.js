@@ -1,18 +1,25 @@
 import StarsRating from 'react-star-rate';
 import { useEffect, useState } from 'react';
 import { XIcon } from '@heroicons/react/outline'
+import { useParams } from 'react-router-dom';
 
-function ProductPageCard({ user, productData }) {
-    let reviewArr = Object.values(productData.reviews)
-    const [newProductData, setNewProductData] = useState([])
-    // console.log(Object.values(productData.reviews))
-
+function ProductPageCard({ user }) {
+    let { id } = useParams();
     let itemRating
     let itemComment
+    const [productData, setProductData] = useState({
+        "name": "",
+        "price": "",
+        "img_url": "",
+        "product_img": "",
+        "description": "",
+        "avg_rating": "",
+        "reviews": []
+    })
 
+    const [reviewArr, setReviewArr] = useState([])
     const [ratingValue, setRatingValue] = useState(itemRating)
     const [commentValue, setCommentValue] = useState(itemComment)
-
     const [rating, setRating] = useState(0)
     const [comment, setComment] = useState('')
     const [newRating, setNewRating] = useState(0)
@@ -20,7 +27,13 @@ function ProductPageCard({ user, productData }) {
     const [buttonPopup, setButtonPopup] = useState(false)
 
     useEffect(() => {
-    },[])
+        fetch(`/products/${id}`)
+            .then(r => r.json())
+            .then(r => {
+                setReviewArr(Object.values(r.reviews))
+                setProductData(r)
+            })
+    }, [])
 
     function submitRating(e) {
         e.preventDefault()
@@ -34,21 +47,35 @@ function ProductPageCard({ user, productData }) {
                 rating, comment, user_id: user.id, product_id: productData.id
             })
         })
-        .then(r => r.json())
+            .then(r => r.json())
+            .then(newRating => addRating(newRating))
     }
 
-    function handleDelete(item) {
-        fetch(`/reviews/${item.id}`, {
-            method: "DELETE"
-        })
+    function addRating(newReview) {
+        setReviewArr([...reviewArr, newReview])
+    }
+
+    function handleDelete(review) {
+        fetch(`/reviews/${review.id}`, {
+            method: "DELETE",
+            headers: { "Content-Type": "application/json" }
+        }).then(r => r.json())
+            .then(review => {
+                removeReview(review)
+            })
+    }
+
+    function removeReview(review) {
+        setReviewArr(reviewArr.filter((item) => {
+            return item.id !== review.id
+        }))
     }
 
     function handleEdit(item, e) {
-        e.preventDefault()
-        console.log(item)
+        // setReviewArr()
     }
 
-    function submitEdit(item, e){
+    function submitEdit(item, e) {
         e.preventDefault()
         fetch(`/reviews/${item.id}`, {
             method: "PATCH",
@@ -69,7 +96,8 @@ function ProductPageCard({ user, productData }) {
                         setRatingValue(item.rating)
                         setCommentValue(item.comment)
                         setButtonPopup(!buttonPopup)
-                        handleEdit(item, e)}}>Edit</button>
+                        handleEdit(item, e)
+                    }}>Edit</button>
                 </div>
                 <div className='text-center border-2 ml-5 text-black bg-[#EDEDED] text-xs font-bold tracking-wider'>
                     <button onClick={() => handleDelete(item)}>Delete</button>
